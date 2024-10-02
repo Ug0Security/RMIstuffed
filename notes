@@ -4,7 +4,7 @@ most of 1099 port exposed on the internet expose jmxrmi, the exploitation is str
 
 and here we are, looking for methods in random package with rmg https://github.com/qtc-de/remote-method-guesser on rmi exposed on internet
 
-https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea)
+https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea, device seems to be an IPTV)
 
 IDataObject
 com.acromate.driver.core.DataObjectImpl_Stub
