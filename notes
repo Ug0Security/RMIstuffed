@@ -2,7 +2,7 @@ ok rmi, java and unserialize stuff are cool after all, it took time to enjoy.. (
 
 most of 1099 port exposed on the internet expose jmxrmi, the exploitation is straightforward with beanshooter https://github.com/qtc-de/beanshooter, but what if there isn't...
 
-and here we are, looking for methods in random package with rmg https://github.com/qtc-de/remote-method-guesser on rmi exposed on internet
+and here we are, looking for methods in random package with rmg https://github.com/qtc-de/remote-method-guesser on rmi exposed on internet, i'll try to describe those which i manage to get an actual RCE gadget (URLDNS is cool but for test only)
 
 https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea, device seems to be an IPTV)
 
