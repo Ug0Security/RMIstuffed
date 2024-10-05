@@ -6,7 +6,7 @@ and here we are, looking for methods in random package with rmg https://github.c
 
 
 1-------------------------------------------------------------------------------------------------------------------------------------------------
-https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea, device seems to be an IPTV)
+https://www.shodan.io/search?query=http.html_hash%3A516997337 (only few hosts on korea)
 
 IDataObject
 com.acromate.driver.core.DataObjectImpl_Stub
